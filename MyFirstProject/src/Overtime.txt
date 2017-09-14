@@ -1,0 +1,4 @@
+ECHO is on.
+Enter number of hours worked
+Enter your hourly rate
+Your salary is 1.0kr

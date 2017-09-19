@@ -8,7 +8,7 @@ public class Question2 {
 		array[1]=2;
 		array[2]=3;
 		array[3]=4;
-		int[]tempNumber=new int[1];
+	//	int[]tempNumber=new int[1];
 		
 		for (int count=0; count<array.length;count++)
 		{

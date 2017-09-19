@@ -11,9 +11,16 @@ public class Review {
 		{
 			nums[i]=((i+1)*2);
 			list.add(new Integer(nums[i]));
-			System.out.println(list.get(i));
+			System.out.print(list.get(i)+" ");
 		}
-		
+		System.out.println("");
+		printWithEnhanced(nums);
 	}
 
+	private static void printWithEnhanced(int[] nums) {
+		for(int i : nums)
+		{
+			System.out.print(i + " ");
+		}
+	}
 }

@@ -2,9 +2,11 @@ package programmingChallenge5;
 
 public class Month {
 	private int monthNumber;
+	private static int numberOfObjects=0;
 
 	public Month() {
 		this.monthNumber = 1;
+		numberOfObjects++;
 	}
 
 	public Month(int monthNumber) {
@@ -12,6 +14,7 @@ public class Month {
 		if (monthNumber > 12 || monthNumber < 1) {
 			this.monthNumber = 1;
 		}
+		numberOfObjects++;
 	}
 
 	public Month(String monthName) {
@@ -56,6 +59,7 @@ public class Month {
 			this.monthNumber = 1;
 			break;
 		}
+		numberOfObjects++;
 	}
 
 	public void setMonthNumber(int monthNumber) {
@@ -73,42 +77,84 @@ public class Month {
 		String monthName;
 		switch (monthNumber) {
 		case 1:
-			monthName="January"; break;
+			monthName = "January";
+			break;
 		case 2:
-			monthName="February"; break;
+			monthName = "February";
+			break;
 		case 3:
-			monthName="March"; break;
+			monthName = "March";
+			break;
 		case 4:
-			monthName="April"; break;
+			monthName = "April";
+			break;
 		case 5:
-			monthName="May"; break;
+			monthName = "May";
+			break;
 		case 6:
-			monthName="June"; break;
+			monthName = "June";
+			break;
 		case 7:
-			monthName="July"; break;
+			monthName = "July";
+			break;
 		case 8:
-			monthName="August"; break;
+			monthName = "August";
+			break;
 		case 9:
-			monthName="September"; break;
+			monthName = "September";
+			break;
 		case 10:
-			monthName="October"; break;
+			monthName = "October";
+			break;
 		case 11:
-			monthName="November"; break;
+			monthName = "November";
+			break;
 		case 12:
-			monthName="December"; break;
-		default: monthName="January"; break;
+			monthName = "December";
+			break;
+		default:
+			monthName = "January";
+			break;
 		}
 		return monthName;
 	}
+
 	public String toString() {
 		return getMonthName();
 	}
-//	public boolean equals(Object month2)
-//	{
-//		if (!(month2 instanceof Month))
-//			return false;
-//		Month mon = (Month)month2;
-//		return 
-//	}
 
+	public boolean equals(Object month2) {
+		if (!(month2 instanceof Month))
+			return false;
+		Month month1 = (Month) month2;
+		return monthNumber == month1.monthNumber;
+	}
+
+	public boolean greaterThan(Object month2)
+	{
+		Month month1 = (Month) month2;
+		
+		if (monthNumber > month1.monthNumber)
+			return true;
+		else
+			return false;
+		
+	}
+	public boolean lessThan(Object month2)
+	{
+		Month month1 = (Month) month2;
+		
+		if (monthNumber < month1.monthNumber)
+			return true;
+		else
+			return false;
+		
+	}
+	public Month copy() {
+	Month month = new Month(monthNumber);
+	return month;
+	}
+	public static  int getNumberOfObjects() {
+		return numberOfObjects;
+	}
 }

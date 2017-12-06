@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="214.0" layoutY="14.0" text="VIA Centre Events">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="85.0" layoutY="84.0" text="Name:" />
+      <Label layoutX="86.0" layoutY="125.0" text="Date:" />
+      <Label layoutX="85.0" layoutY="169.0" text="Time:" />
+      <Label layoutX="84.0" layoutY="212.0" text="Place:" />
+      <Button fx:id="submit" layoutX="268.0" layoutY="312.0" mnemonicParsing="false" text="Submit" onAction="#fullString"/>
+      <TextField fx:id="nameTF" layoutX="146.0" layoutY="79.0" />
+      <TextField fx:id="dateTF" layoutX="146.0" layoutY="120.0" />
+      <TextField fx:id="timeTF" layoutX="146.0" layoutY="164.0" />
+      <TextField fx:id="placeTF" layoutX="146.0" layoutY="207.0" />
+   </children>
+</AnchorPane>

@@ -5,14 +5,14 @@ public class Line {
 	private Point pointA, pointB;
 
 	public Line(Point pointA, Point pointB, String colour) {
-		this.pointA = pointA;
-		this.pointB = pointB;
+		this.pointA = pointA.copy();
+		this.pointB = pointB.copy();
 		this.colour = colour;
 	}
 
 	public Line(Point pointA, Point pointB) {
-		this.pointA = pointA;
-		this.pointB = pointB;
+		this.pointA = pointA.copy();
+		this.pointB = pointB.copy();
 		this.colour = "Not defined";
 	}
 
@@ -46,7 +46,7 @@ public class Line {
 
 	public String toString() {
 		return "A " + this.colour + " line from (" + pointA.getX() + "," + pointB.getX() + ") " + "to (" + pointA.getY()
-				+ "," + pointB.getY() + ") with a length equal to " + getLength();
+				+ "," + pointB.getY() + ") with a length of " + getLength();
 	}
 
 	public boolean equals(Object obj) {

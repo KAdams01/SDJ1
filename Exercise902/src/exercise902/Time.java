@@ -8,48 +8,48 @@ public class Time {
 			hour = h % 24;
 		else
 			hour = h;
-		if (m > 60) {
-			minute = m % 60;
+		while (m > 60) {
+			m -= 60;
 			hour++;
-		} else
-			minute = m;
-		if (s > 60) {
-			second = s % 60;
+		}
+		minute = m;
+		while (s > 60) {
+			second = s - 60;
 			minute++;
-		} else
-			second = s;
+		}
+		second = s;
 
 	}
 
 	public Time(int s) {
-		while (s>=60) {
+		while (s >= 60) {
 			minute++;
-			s=s-60;
+			s = s - 60;
 		}
-		second=s;
+		second = s;
 	}
 
 	public String toString() {
-		if (hour<10 && minute<10 && second<10) {
-			return "0"+hour+":0"+minute+":0"+second;
+		if (hour < 10 && minute < 10 && second < 10) {
+			return "0" + hour + ":0" + minute + ":0" + second;
 		}
-		if (minute<10 && second<10){
-			return hour +":0"+minute+":0"+second;
+		if (minute < 10 && second < 10) {
+			return hour + ":0" + minute + ":0" + second;
 		}
-		if (hour<10 && minute<10) {
-			return "0"+hour +":0"+minute+ ":"+second;
+		if (hour < 10 && minute < 10) {
+			return "0" + hour + ":0" + minute + ":" + second;
 		}
-		if (hour<10 && second<10) {
-			return "0"+hour + ":"+minute+":0"+second;
+		if (hour < 10 && second < 10) {
+			return "0" + hour + ":" + minute + ":0" + second;
 		}
-		if (hour<10) {
-			return "0"+hour + ":"+minute+ ":"+second;
+		if (hour < 10) {
+			return "0" + hour + ":" + minute + ":" + second;
 		}
-		if (minute<10) {
-			return hour +":0"+minute+second;
+		if (minute < 10) {
+			return hour + ":0" + minute + second;
 		}
-		if (second<10) {
-			return hour + ":"+minute+":0"+second;
+		if (second < 10) {
+			return hour + ":" + minute + ":0" + second;
 		}
 		return hour + ":" + minute + ":" + second;
 	}

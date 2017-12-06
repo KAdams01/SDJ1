@@ -1,0 +1,25 @@
+1, 223500, Alexandru Vieru, RO, 30, 4, 1998
+5, 253600, Amahdya Andrea Delkescamp, USA, 10, 3, 1998
+3, 253600, Taha, SY, 30, 4, 1997
+2, 253600, Justas Brazdeikis, LT, 30, 8, 1999
+1, 253700, Arif Yildirim, DK, 30, 3, 1998
+1, 253800, Fadi Atia Dasus, SY, 30, 2, 1998 
+7, 253800, Aleks, RO, 30, 1, 1999
+7, 253700, Mihai, RO, 30, 3, 1996
+7, 253700, Ilie, RO, 30, 6, 1998
+2, 253900, Marius Amarandei, RO, 30, 7, 1999
+2, 253900, Flavius Alin Boanca, RO, 30, 8, 1997
+2, 253800, Giedrius Stasiulis, LT, 30, 9, 1998
+3, 253900, Oskars, BG, 30, 10, 1999
+3, 253900, Dragos, CR, 30, 11, 1998 
+3, 253800, Liviu, CR, 30, 12, 1997
+6, 253800, Sergiu, RO, 30, 12, 1998
+6, 253900, Alex M, RO, 30, 11, 1999
+6, 253800, Ionut Cristian, RO, 30, 10, 1999
+5, 253900, Lukas, RO, 30, 9, 1997
+5, 254100, Kevin, UK, 30, 8, 1998
+5, 254100, Muhammad, PK, 30, 7, 1999
+4, 254100, Ionut, RO, 30, 6, 1998
+4, 255300, Daniela, BG, 30, 5, 1999
+4, 254100, Nicolai, DK, 26, 6, 1998
+4, 254100, Andrei, BG, 3, 3, 1999

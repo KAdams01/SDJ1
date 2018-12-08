@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from UserDAOService WSDL service -->
+
+  <service name="UserDAO" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://user.via.di"/>
+      <parameter name="wsdlServiceElement" value="UserDAOService"/>
+      <parameter name="schemaQualified" value="http://user.via.di"/>
+      <parameter name="wsdlServicePort" value="UserDAO"/>
+      <parameter name="className" value="di.via.user.UserDAO"/>
+      <parameter name="wsdlPortType" value="UserDAO"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://user.via.di" xmlns:retNS="http://user.via.di" xmlns:rtns="http://user.via.di" xmlns:tns="http://user.via.di" name="getUsers" qname="operNS:getUsers" returnQName="retNS:getUsersReturn" returnType="rtns:ArrayOf_xsd_anyType" returnItemQName="tns:item" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://user.via.di" xmlns:retNS="http://user.via.di" xmlns:rtns="http://user.via.di" name="getUser" qname="operNS:getUser" returnQName="retNS:getUserReturn" returnType="rtns:User" soapAction="">
+        <parameter xmlns:pns="http://user.via.di" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://user.via.di" name="deleteUser" qname="operNS:deleteUser" soapAction="">
+        <parameter xmlns:pns="http://user.via.di" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://user.via.di" name="updateUser" qname="operNS:updateUser" soapAction="">
+        <parameter xmlns:pns="http://user.via.di" xmlns:tns="http://user.via.di" qname="pns:user" type="tns:User"/>
+      </operation>
+      <operation xmlns:operNS="http://user.via.di" name="addUser" qname="operNS:addUser" soapAction="">
+        <parameter xmlns:pns="http://user.via.di" xmlns:tns="http://user.via.di" qname="pns:user" type="tns:User"/>
+      </operation>
+      <parameter name="allowedMethods" value="getUsers addUser getUser deleteUser updateUser"/>
+
+      <typeMapping xmlns:ns="http://user.via.di" qname="ns:&gt;getUsersResponse" type="java:di.via.user.GetUsersResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://user.via.di" qname="ns:User" type="java:di.via.user.User" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://user.via.di" qname="ns:&gt;deleteUser" type="java:di.via.user.DeleteUser" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://user.via.di" qname="ns:&gt;getUsers" type="java:di.via.user.GetUsers" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://user.via.di" qname="ns:&gt;addUserResponse" type="java:di.via.user.AddUserResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <arrayMapping xmlns:ns="http://user.via.di" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema" qname="ns:ArrayOf_xsd_anyType" type="java:java.lang.Object[]" innerType="cmp-ns:anyType" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://user.via.di" qname="ns:&gt;getUser" type="java:di.via.user.GetUser" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://user.via.di" qname="ns:&gt;updateUser" type="java:di.via.user.UpdateUser" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://user.via.di" qname="ns:&gt;getUserResponse" type="java:di.via.user.GetUserResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://user.via.di" qname="ns:&gt;deleteUserResponse" type="java:di.via.user.DeleteUserResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://user.via.di" qname="ns:&gt;addUser" type="java:di.via.user.AddUser" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://user.via.di" qname="ns:&gt;updateUserResponse" type="java:di.via.user.UpdateUserResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+  </service>
+</deployment>
